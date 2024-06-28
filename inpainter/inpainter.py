@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import time
-from skimage.color import rgb2grey, rgb2lab
+from skimage.color import rgb2gray, rgb2lab
 from skimage.filters import laplace
 from scipy.ndimage.filters import convolve
 
@@ -150,7 +150,7 @@ class Inpainter():
         # TODO: find a better method to calc the gradient
         height, width = self.working_image.shape[:2]
 
-        grey_image = rgb2grey(self.working_image)
+        grey_image = rgb2gray(self.working_image)
         grey_image[self.working_mask == 1] = None
 
         gradient = np.nan_to_num(np.array(np.gradient(grey_image)))
